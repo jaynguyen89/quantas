@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Quantas",
+  "name": "Quantas Frontend Coding Challenge",
+  "description": "Candidate: Jay Nguyen (jay.nguyen.developer@gmail.com)",
   "icons": [
     {
       "src": "favicon.ico",

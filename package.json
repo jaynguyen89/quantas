@@ -1,24 +1,73 @@
 {
-  "name": "quantas",
+  "name": "haloweb",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "cra-template-typescript": "1.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
-  },
   "scripts": {
+    "setup:win": "rmdir node_modules /s /q & npm install --legacy-peer-deps",
+    "setup:lin": "sudo rm -r node_modules & npm install --legacy-peer-deps",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --env=jsdom --watchAll --coverage",
+    "audit": "npm audit --json --audit-level=moderate"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "immer": "^9.0.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.14.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-transform-react-jsx": "^7.23.4",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-typescript": "^7.23.3",
+    "@cfaester/enzyme-adapter-react-18": "^0.7.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/enzyme": "^3.10.18",
+    "@types/ignore-styles": "^5.0.3",
+    "@types/jest": "^27.5.2",
+    "@types/redux-mock-store": "^1.0.6",
+    "babel-jest": "^29.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "identity-obj-proxy": "^3.0.0",
+    "ignore-styles": "^5.0.1",
+    "jest": "^27.5.1",
+    "redux-mock-store": "^1.5.4",
+    "sass": "^1.63.6",
+    "ts-node": "^10.9.2"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios/)"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|svg|mp4|wav|mp3|pdf)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "browserslist": {
     "production": [
