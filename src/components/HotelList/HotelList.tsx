@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Container from 'src/components/Container/Container';
 import Sorter from 'src/components/HotelList/Sorter/Sorter';
 import HotelItem from 'src/components/HotelList/HotelItem/HotelItem';
 import useHotelData from 'src/hooks/useHotelData';
 import Loading from 'src/components/Loading/Loading';
+import { IHotel } from 'src/commons/interfaces';
 import { SortingOption } from 'src/commons/enums';
 import configs from 'src/commons/configs';
 
@@ -14,6 +15,7 @@ const HotelList = () => {
     const hotelData = useHotelData();
 
     const [sorter, setSorter] = useState<keyof typeof SortingOption>(configs.defaultSortOption);
+    const [hotels, setHotels] = useState<Array<IHotel>>(hotelData);
 
     const { count, hotelText } = useMemo(() => {
         let count = 0;
@@ -27,13 +29,26 @@ const HotelList = () => {
         return { count, hotelText };
     }, [hotelData]);
 
+
+
+    useEffect(() => {
+        if (hotelData.length === 0) return;
+
+        const sortedData = hotelData.sort((former, latter) => {
+            const comparison = former.pricing.price.value - latter.pricing.price.value;
+            return SortingOption[sorter] === SortingOption.HIGH_LOW ? -1 * comparison : comparison;
+        });
+
+        setHotels([...sortedData]);
+    }, [sorter, hotelData]);
+
     const handleChange = (option: string) =>
         setSorter(option as keyof typeof SortingOption);
 
     return (
         <Container>
             <div className='wrapper'>
-                {(hotelData.length === 0 && <Loading />) || (
+                {(hotels.length === 0 && <Loading />) || (
                     <>
                         <img className='logo' src={QuantasLogo} alt='Quantas' />
 
@@ -52,7 +67,7 @@ const HotelList = () => {
                         </div>
 
                         <div className='list-body'>
-                            {hotelData.map(hotel => (
+                            {hotels.map(hotel => (
                                 <HotelItem key={hotel.id} hotel={hotel} />
                             ))}
                         </div>
