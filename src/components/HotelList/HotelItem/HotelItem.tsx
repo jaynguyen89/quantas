@@ -42,8 +42,6 @@ const HotelItem = ({
                     <Pricing pricing={hotel.pricing} />
                 </div>
             </div>
-
-
         </div>
     );
 };
