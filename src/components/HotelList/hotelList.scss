@@ -1,0 +1,32 @@
+@use 'src/commons/variables' as vars;
+
+.wrapper {
+    margin-top: vars.$small;
+
+    .logo {
+        width: 180px;
+    }
+
+    .list-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: vars.$small;
+        margin-bottom: vars.$xxtiny;
+        font-size: vars.$sh9;
+        font-weight: vars.$regular;
+
+        .counter {
+            font-style: italic;
+
+            & :nth-child(odd) {
+                font-weight: vars.$thick;
+                font-style: normal;
+            }
+        }
+    }
+
+    .list-body {
+        width: 100%;
+    }
+}

@@ -1,0 +1,45 @@
+@use 'src/commons/variables' as vars;
+
+.rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    color: vars.$grey;
+    font-size: vars.$h9;
+    margin: 0 0 0 vars.$sh9;
+    width: auto;
+    position: relative;
+    padding: 0;
+
+    .front {
+        color: vars.$yellow;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+        .circle {
+            width: vars.$xh10;
+            height: vars.$xh10;
+            margin: 0 vars.$xmicro;
+            border-radius: 50%;
+            background-color: vars.$yellow;
+        }
+    }
+
+    .behind {
+        padding: 0;
+        display: flex;
+        z-index: 0;
+
+        .circle {
+            width: vars.$xh10;
+            height: vars.$xh10;
+            margin: 0 vars.$xmicro;
+            border-radius: 50%;
+            background-color: vars.$grey;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@use 'src/commons/variables' as vars;
+
+.header {
+    height: vars.$xxlarge;
+    background-color: vars.$grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: vars.$micro vars.$medium;
+    color: vars.$white;
+    box-shadow: vars.$shadow;
+
+    p {
+        margin: 0;
+        font-size: vars.$sh8;
+        line-height: vars.$h9;
+        align-content: center;
+    }
+
+    & :first-child {
+        margin: 0;
+        font-size: vars.$xh8;
+        font-weight: vars.$thick;
+        align-content: center;
+    }
+}

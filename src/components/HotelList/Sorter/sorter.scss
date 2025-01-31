@@ -1,0 +1,25 @@
+@use 'src/commons/variables' as vars;
+
+.sorter {
+    margin-top: vars.$micro;
+
+    span {
+        font-weight: vars.$thick;
+        margin-right: vars.$micro;
+    }
+
+    select {
+        letter-spacing: 0.5px;
+        min-width: 130px;
+        border: vars.$xmicro solid vars.$grey;
+        border-radius: vars.$micro;
+        padding: 2px vars.$micro;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nGNwmP32Py0ww6jBDoMmKCJWvAdjqhpcvO3T/88///3/+uvf//Idn6hjcOPez////P0PB7///v/fsOczZQbX7Pr8/++//xgAZFHVrs/kGZy45sP/b7+wmAoFoGABqSHZ4OZ9n/+fefILLwapGTw5z3fRu/9p6z/ixSA1JBs84ejX/4RA/9EvpBvsOOft/xOPfuE09PSTX/+d55KZ3HwWvvt//dVvDEOvvfz933sh7mAgKvK8F777f/E5wvDzz37991qA31CiU4XL3Lf/N1z7AcYgNkWpwoFWyc1hxBkMAPX/ha6yMtRKAAAAAElFTkSuQmCC) no-repeat;
+        background-position-x: 100%;
+        background-position-y: -2px;
+    }
+
+    select::-ms-expand { display: none; }
+}
