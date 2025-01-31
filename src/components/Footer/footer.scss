@@ -1,0 +1,35 @@
+@use 'src/commons/variables' as vars;
+
+.footer {
+    height: vars.$xxlarge;
+    background-color: vars.$grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 vars.$medium;
+    margin-top: vars.$small;
+    color: vars.$white;
+    font-size: vars.$h9;
+
+    @media screen and (max-width: vars.$medium-width) {
+        display: flow;
+    }
+
+    .contact {
+        align-content: center;
+        p {
+            margin: 0;
+        }
+    }
+
+    .links {
+        align-content: center;
+        a {
+            margin-left: vars.$tiny;
+
+            @media screen and (max-width: vars.$medium-width) {
+                display: none;
+            }
+        }
+    }
+}

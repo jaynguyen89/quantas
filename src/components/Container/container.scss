@@ -1,0 +1,26 @@
+@use 'src/commons/variables' as vars;
+
+.container {
+    margin: auto;
+    padding: 0;
+    min-height: 100%;
+    
+    @media screen and (min-width: vars.$small-width) {
+        width: 97%;
+    }
+    @media screen and (min-width: vars.$medium-width) {
+        width: 90%;
+    }
+    @media screen and (min-width: vars.$desktop-width) {
+        width: 80%;
+    }
+    @media screen and (min-width: vars.$large-width) {
+        width: 80%;
+    }
+    @media screen and (min-width: vars.$wide-width) {
+        width: 70%;
+    }
+    @media screen and (min-width: vars.$ultrawide-width) {
+        width: 60%;
+    }
+}

@@ -1,0 +1,18 @@
+@use 'src/commons/variables' as vars;
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    font-size: vars.$baseSize;
+    font-weight: vars.$regular;
+    font-family: "Arial Narrow", "serif";
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+    color: vars.$black;
+    background-color: vars.$white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

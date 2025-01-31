@@ -1,0 +1,147 @@
+@use 'src/commons/variables' as vars;
+
+.hotel-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: vars.$xxtiny;
+
+    @media screen and (max-width: vars.$medium-width) {
+        flex-direction: column;
+    }
+
+    .hotel-img {
+        position: relative;
+
+        img {
+            width: 150px;
+            height: 125px;
+        }
+
+        p {
+            font-size: vars.$xh10;
+            font-weight: vars.$thick;
+            color: vars.$red;
+            background-color: vars.$white;
+            position: absolute;
+            top: vars.$sh10;
+            padding: vars.$micro;
+            border: vars.$xmicro solid vars.$lightGrey;
+        }
+
+        @media screen and (max-width: vars.$medium-width) {
+            img {
+                width: 50%;
+                height: 50%;
+            }
+        }
+    }
+
+    .hotel-info {
+        width: 100%;
+        margin-left: vars.$h8;
+        padding: vars.$micro 0;
+        font-weight: vars.$thick;
+        font-size: vars.$xh10;
+        position: relative;
+        border-top: vars.$xmicro solid vars.$lightGrey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media screen and (max-width: vars.$medium-width) {
+            margin-left: 0;
+            border-top: none;
+            border-bottom: vars.$xmicro solid vars.$lightGrey;
+        }
+
+        @media screen and (max-width: vars.$small-width) {
+            display: flow;
+        }
+
+        .general-info {
+            h6 {
+                font-size: vars.$mh9;
+                font-weight: vars.$regular;
+                margin: 0;
+            }
+
+            p {
+                font-weight: vars.$light;
+                color: vars.$grey;
+                margin: 0 0 vars.$xxtiny;
+            }
+
+            a {
+                color: vars.$red;
+                font-weight: vars.$light;
+            }
+
+            span:not(h6 span) {
+                font-weight: vars.$light;
+                color: vars.$green;
+                position: absolute;
+                bottom: 0;
+            }
+            
+            @media screen and (max-width: vars.$desktop-width) {
+                h6 {
+                    width: 250px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+            @media screen and (max-width: vars.$medium-width) {
+                h6 {
+                    width: auto;
+                }
+                span:not(h6 span) {
+                    position: inherit;
+                    margin-top: vars.$micro;
+                }
+            }
+        }
+
+        .price-info {
+            align-content: center;
+            text-align: right;
+            font-size: vars.$sh9;
+            font-weight: vars.$light;
+
+            .pricing {
+                width: vars.$xh1;
+
+                @media screen and (max-width: vars.$small-width) {
+                    width: 100%;
+                }
+
+                p {
+                    font-size: vars.$xxtiny;
+                    margin: 0 0 vars.$sh10;
+                }
+
+                h5 {
+                    font-weight: vars.$light;
+                    font-size: vars.$h8;
+                    margin: 0;
+
+                    span {
+                        font-size: vars.$h9;
+                        vertical-align: top;
+                    }
+                }
+
+                b {
+                    margin: 0;
+                    color: vars.$red;
+                    font-weight: vars.$light;
+
+                    span {
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+}
