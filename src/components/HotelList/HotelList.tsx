@@ -29,8 +29,6 @@ const HotelList = () => {
         return { count, hotelText };
     }, [hotelData]);
 
-
-
     useEffect(() => {
         if (hotelData.length === 0) return;
 

@@ -18,7 +18,7 @@ const config: Config = {
   bail: 1,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\lovea\\AppData\\Local\\Temp\\jest",
+  // cacheDirectory: "",
 
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
@@ -35,8 +35,6 @@ const config: Config = {
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
   //   "\\\\node_modules\\\\",
-  //   "<rootDir>/src/components/atoms/Skeletons.tsx",
-  //   "<rootDir>/src/components/atoms/Recaptcha.tsx",
   //   "**/__tests__/**",
   //   "**/*(M|m)ock*.[jt]s?(x)",
   // ],
@@ -111,7 +109,8 @@ const config: Config = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(css|scss)$": "identity-obj-proxy"
+    '\\.(jpg|jpeg|png|gif|svg|mp4|wav|mp3|pdf)$': '<rootDir>/assets/fileMock.js',
+    '\\.(css|scss)$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -187,6 +186,7 @@ const config: Config = {
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
     '\\\\node_modules\\\\',
+    '_mocks_.ts',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files

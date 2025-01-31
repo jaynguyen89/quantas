@@ -29,7 +29,7 @@ export interface IApiHotel {
         savings: {
             amount: number,
             currency: string,
-        },
+        } | null,
         cancellationOption: {
             cancellationType: string,
         },
