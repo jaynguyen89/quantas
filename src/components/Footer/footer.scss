@@ -11,6 +11,10 @@
     color: vars.$white;
     font-size: vars.$h9;
 
+    @media screen and (max-width: vars.$medium-width) {
+        display: flow;
+    }
+
     .contact {
         align-content: center;
         p {
@@ -22,6 +26,10 @@
         align-content: center;
         a {
             margin-left: vars.$tiny;
+
+            @media screen and (max-width: vars.$medium-width) {
+                display: none;
+            }
         }
     }
 }

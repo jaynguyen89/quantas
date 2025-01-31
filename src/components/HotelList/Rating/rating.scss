@@ -42,4 +42,9 @@
             background-color: vars.$grey;
         }
     }
+
+    @media screen and (max-width: vars.$desktop-width) {
+        display: block;
+        margin: vars.$sh10 0;
+    }
 }
