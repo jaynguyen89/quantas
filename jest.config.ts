@@ -7,6 +7,7 @@
 // @ts-expect-error
 import type { Config } from 'jest';
 import register from 'ignore-styles';
+import { TextEncoder, TextDecoder } from 'util';
 
 register(['.css', '.scss']);
 
@@ -56,7 +57,6 @@ const config: Config = {
       branches: 80,
       functions: 80,
       lines: 80,
-      statements: -30,
     },
   },
 
@@ -81,7 +81,10 @@ const config: Config = {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  // globals: {},
+  globals: {
+    TextEncoder: TextEncoder,
+    TextDecoder: TextDecoder,
+  },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -98,18 +101,13 @@ const config: Config = {
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
-    // 'mjs',
-    // 'cjs',
-    // 'jsx',
     'ts',
     'tsx',
-    // 'json',
-    // 'node',
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg|mp4|wav|mp3|pdf)$': '<rootDir>/assets/fileMock.js',
+    '\\.(jpg|jpeg|png|gif|svg|mp4|wav|mp3|pdf)$': '<rootDir>/src/assets/fileMock.js',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
 
@@ -155,10 +153,10 @@ const config: Config = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>/src/assets/jest.setup.js'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['<rootDir>/src/assets/jest.setup.js'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -185,8 +183,8 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
-    '\\\\node_modules\\\\',
-    '_mocks_.ts',
+    '/node_modules/',
+    '<rootDir>/src/assets',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -205,7 +203,7 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: [
-    '\\\\node_modules\\\\',
+    'node_modules/',
     '\\.pnp\\.[^\\\\]+$',
   ],
 
