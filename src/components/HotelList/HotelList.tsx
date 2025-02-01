@@ -17,6 +17,7 @@ const HotelList = () => {
     const [sorter, setSorter] = useState<keyof typeof SortingOption>(configs.defaultSortOption);
     const [hotels, setHotels] = useState<Array<IHotel>>(hotelData);
 
+    // Memoizing here is not necessary as this logic is not resource heavy, it's only to demo
     const { count, hotelText } = useMemo(() => {
         let count = 0;
         let hotelText = '';
@@ -29,6 +30,7 @@ const HotelList = () => {
         return { count, hotelText };
     }, [hotelData]);
 
+    // To sort the hotel list whenever the Sorting Dropdown changes
     useEffect(() => {
         if (hotelData.length === 0) return;
 

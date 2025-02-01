@@ -3,12 +3,15 @@ import rawHotelData from 'src/assets/data.json';
 import { CancellationType, ImageType, PromotionType, RatingType } from 'src/commons/enums';
 import configs from 'src/commons/configs';
 
+// This function supposes to fetch data from an online API, this is just a simulation
 export const getApiHotelData = async (): Promise<Array<IApiHotel>> => {
     // Simulate API latency
     await new Promise(resolve => setTimeout(resolve, 2000));
     return rawHotelData.results as Array<IApiHotel>;
 };
 
+// Having a separate data schema for client-side will enhance readability and maintainability of the codes
+// Just like Domain-Driven design, in which data schema are not coupled between different domains
 export const mapApiHotelDataToClientSchema = (data: Array<IApiHotel>): Array<IHotel> => {
     return data.map(item => ({
         id: item.id,
