@@ -23,12 +23,12 @@ const Rating = ({
         <div className='rating'>
             <div className='front' style={{ width: `${value}%` }}>
                 {[...Array(configs.maxRatingCap)].map((_, i) => (
-                    <div key={i}>{ratingIcon}</div>
+                    <div id='icon-front' key={i}>{ratingIcon}</div>
                 ))}
             </div>
             <div className='behind'>
                 {[...Array(configs.maxRatingCap)].map((_, i) => (
-                    <div key={i}>{ratingIcon}</div>
+                    <div id='icon-behind' key={i}>{ratingIcon}</div>
                 ))}
             </div>
         </div>

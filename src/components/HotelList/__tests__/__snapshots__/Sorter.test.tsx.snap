@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sorter.tsx renders correctly 1`] = `
+<div
+  className="sorter"
+>
+  <span>
+    Sort by
+  </span>
+  <select
+    name="sorter"
+    onChange={[Function]}
+    value="LOW_HIGH"
+  >
+    <option
+      key="HIGH_LOW"
+      value="HIGH_LOW"
+    >
+      Price high-low
+    </option>
+    <option
+      key="LOW_HIGH"
+      value="LOW_HIGH"
+    >
+      Price low-high
+    </option>
+  </select>
+</div>
+`;

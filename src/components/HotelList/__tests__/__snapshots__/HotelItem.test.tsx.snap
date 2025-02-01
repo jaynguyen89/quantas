@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HotelItem.tsx renders correctly 1`] = `
+<div
+  className="hotel-item"
+>
+  <div
+    className="hotel-img"
+  >
+    <img
+      alt="Photo1"
+      src="https://photo1.png"
+    />
+    <p>
+      Promo1
+    </p>
+  </div>
+  <div
+    className="hotel-info"
+  >
+    <div
+      className="general-info"
+    >
+      <h6>
+        <span
+          id="hotel-name"
+        >
+          First Hotel
+        </span>
+        <Rating
+          type="SELF"
+          value={3}
+        />
+      </h6>
+      <p>
+        1 What Street, Where 3333
+      </p>
+      <a
+        href="/"
+      >
+        Promo1
+      </a>
+      <br />
+      <span>
+        Free cancellation
+      </span>
+    </div>
+    <div
+      className="price-info"
+    >
+      <Pricing
+        pricing={
+          Object {
+            "cancellationType": "FREE_CANCELLATION",
+            "name": "Promo1",
+            "price": Object {
+              "currency": "AU",
+              "value": 111,
+            },
+            "promotion": Object {
+              "title": "Promo1",
+              "type": "MEMBER",
+            },
+            "savings": Object {
+              "currency": "AU",
+              "value": 11,
+            },
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -35,9 +35,9 @@ const config: Config = {
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
-  //   "\\\\node_modules\\\\",
-  //   "**/__tests__/**",
-  //   "**/*(M|m)ock*.[jt]s?(x)",
+  //   '\\\\node_modules\\\\',
+  //   '**/__tests__/**',
+  //   '**/*(M|m)ock*.[jt]s?(x)',
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
@@ -185,6 +185,7 @@ const config: Config = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '<rootDir>/src/assets',
+    '<rootDir>/src/utilities',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files

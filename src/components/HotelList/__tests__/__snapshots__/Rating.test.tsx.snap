@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating.tsx renders correctly 1`] = `
+<div
+  className="rating"
+>
+  <div
+    className="front"
+    style={
+      Object {
+        "width": "3%",
+      }
+    }
+  >
+    <div
+      id="icon-front"
+      key="0"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-front"
+      key="1"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-front"
+      key="2"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-front"
+      key="3"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-front"
+      key="4"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+  </div>
+  <div
+    className="behind"
+  >
+    <div
+      id="icon-behind"
+      key="0"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-behind"
+      key="1"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-behind"
+      key="2"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-behind"
+      key="3"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+    <div
+      id="icon-behind"
+      key="4"
+    >
+      <div
+        className="circle"
+      />
+    </div>
+  </div>
+</div>
+`;

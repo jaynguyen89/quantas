@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pricing.tsx renders correctly 1`] = `
+<div
+  className="pricing"
+>
+  <p>
+    1 night total (
+    AU
+    )
+  </p>
+  <h5>
+    <span>
+      $
+    </span>
+    111
+  </h5>
+  <b>
+    Save $
+    11
+    <span>
+      ~
+    </span>
+  </b>
+</div>
+`;

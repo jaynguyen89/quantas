@@ -27,7 +27,7 @@ const HotelItem = ({
             <div className='hotel-info'>
                 <div className='general-info'>
                     <h6>
-                        <span>{hotel.name}</span>
+                        <span id='hotel-name'>{hotel.name}</span>
                         <Rating {...hotel.rating} />
                     </h6>
                     <p>{hotel.address}</p>

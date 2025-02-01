@@ -21,7 +21,7 @@ export const mapApiHotelDataToClientSchema = (data: Array<IApiHotel>): Array<IHo
         },
         rating: {
             value: Math.round(item.property.rating.ratingValue * 100 / configs.maxRatingCap),
-            type: item.property.rating.ratingType as RatingType,
+            type: item.property.rating.ratingType.toUpperCase() as RatingType,
         },
         pricing: {
             name: item.offer.name,
